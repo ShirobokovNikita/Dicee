@@ -35,7 +35,7 @@ class ViewController: UIViewController {
             verticalStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 58),
             verticalStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             verticalStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            verticalStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -58)
+            verticalStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -108)
         ])
     }
     

@@ -31,7 +31,7 @@ class ViewBuilder {
         verticalStackView.axis = .vertical
         verticalStackView.distribution = .equalSpacing
         verticalStackView.alignment = .center
-        verticalStackView.spacing = 15
+        verticalStackView.spacing = 55
         verticalStackView.translatesAutoresizingMaskIntoConstraints = false
         return verticalStackView
     }()
@@ -77,14 +77,17 @@ class ViewBuilder {
     lazy var randomButton: UIButton = {
        let button = UIButton()
         button.setTitle("random", for: .normal)
-        button.backgroundColor = UIColor.blue
+        button.backgroundColor = #colorLiteral(red: 0.6066563725, green: 0.1104471758, blue: 0.1243971363, alpha: 1)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.widthAnchor.constraint(equalToConstant: 138).isActive = true
         button.heightAnchor.constraint(equalToConstant: 58).isActive = true
+        button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(changeButton), for: .touchUpInside)
         return button
     }()
     
-//    @objc func changeButton() {
-//        diceImageFirst.image = UIImage(named: .randomElement)
-//    }
+    @objc func changeButton() {
+        diceImageFirst.image = UIImage(named: images.randomElement() ?? "DiceOne")
+        diceImageSecond.image = UIImage(named: images.randomElement() ?? "DiceTwo")
+    }
 }
